@@ -1,18 +1,25 @@
 package com.api.bootrestbook.Controller;
 
 import com.api.bootrestbook.entities.Book;
+import com.api.bootrestbook.services.BookServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class bookController {
+    @Autowired
+    private BookServices bookServices;
     @GetMapping("/books")
-    public Book getBooks()
+    public List<Book> getBooks()
     {
-        Book book = new Book();
-        book.setId(1234);
-        book.setTitle("Zero to one");
-        book.setAuthor("Peter theil");
-        return book;
+        return this.bookServices.getAllbooks();
+    }
+    @GetMapping("/books/{id}")
+    public Book getBook(@PathVariable("id") int id)
+    {
+        return this.bookServices.getBookbyID(id);
     }
 }
