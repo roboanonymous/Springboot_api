@@ -1,16 +1,18 @@
 package com.api.bootrestbook.Controller;
 
+import com.api.bootrestbook.entities.Book;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 public class bookController {
-    @RequestMapping(value = "/books" , method = RequestMethod.GET)
-    @ResponseBody
-    public String getBooks()
+    @GetMapping("/books")
+    public Book getBooks()
     {
-        return "This is testing book first";
+        Book book = new Book();
+        book.setId(1234);
+        book.setTitle("Zero to one");
+        book.setAuthor("Peter theil");
+        return book;
     }
 }
