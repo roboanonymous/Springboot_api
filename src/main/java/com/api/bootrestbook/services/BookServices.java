@@ -13,6 +13,7 @@ public class BookServices {
     private static List<Book> list = new ArrayList<>();
 
     static {
+
         list.add(new Book(12, "Java Complete Referane" , "Samyak Jain"));
         list.add(new Book(13, "Python Complete Referane" , "Sambhav Jain"));
         list.add(new Book(14, "C++ Complete Referane" , "Dhruv Gupta"));
@@ -28,7 +29,15 @@ public class BookServices {
     public Book getBookbyID(int id)
     {
         Book book = null;
-       book =  list.stream().filter(e->e.getId() == id).findFirst().get();
+        try
+        {
+            book =  list.stream().filter(e->e.getId() == id).findFirst().get();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
         return book;
     }
 
