@@ -22,4 +22,12 @@ public class bookController {
     {
         return this.bookServices.getBookbyID(id);
     }
+
+    @PostMapping("/books")
+    public Book addBook(@RequestBody Book book)
+    {
+        Book b = this.bookServices.addBook(book);
+        System.out.println(book);
+        return b;
+    }
 }
