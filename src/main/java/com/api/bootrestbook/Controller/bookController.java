@@ -40,12 +40,12 @@ public class bookController {
     @PostMapping("/books")
     public ResponseEntity<Book> addBook(@RequestBody Book book)
     {
-        Book b = null
+        Book b = null;
         try
         {
             b = this.bookServices.addBook(book);
             System.out.println(book);
-            return ResponseEntity.of(Optional.of(b))
+            return ResponseEntity.of(Optional.of(b));
         }
         catch (Exception e)
         {

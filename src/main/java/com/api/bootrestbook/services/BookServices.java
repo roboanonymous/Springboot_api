@@ -13,11 +13,11 @@ public class BookServices {
     private static List<Book> list = new ArrayList<>();
 
     static {
-
-        list.add(new Book(12, "Java Complete Referane" , "Samyak Jain"));
-        list.add(new Book(13, "Python Complete Referane" , "Sambhav Jain"));
-        list.add(new Book(14, "C++ Complete Referane" , "Dhruv Gupta"));
-        list.add(new Book(15, "JavaScript Complete Referane" , "Deepak Gupta"));
+//
+//        list.add(new Book(12, "Java Complete Referane" , "Samyak Jain"));
+//        list.add(new Book(13, "Python Complete Referane" , "Sambhav Jain"));
+//        list.add(new Book(14, "C++ Complete Referane" , "Dhruv Gupta"));
+//        list.add(new Book(15, "JavaScript Complete Referane" , "Deepak Gupta"));
     }
 
     //get all books
